@@ -1,0 +1,33 @@
+body {
+  background-color: #fcf1e1;
+  margin:0;
+}
+
+* {
+  font-family: bakery;
+}
+
+/* styling the form */
+form > * {
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+#Search-input{
+  border-radius: 5px;
+  width: 50%;
+}
+#Search-button{
+  background-color: #8e7136;
+  width: 10%;
+  border-radius: 5px;
+}
+
+
+/* Hher the bakery fonts*/
+@font-face {
+  font-family: bakery;
+  src: url(bakeryFonts/bakery.ttf);
+
+}
