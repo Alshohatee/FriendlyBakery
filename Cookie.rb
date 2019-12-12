@@ -1,9 +1,10 @@
 class Cookie
   attr_reader :id, :name, :description, :price
-  def initialize(id, name, description, price)
+  def initialize(id, name, img, description, price)
     @id = id
     @name = name
-    @hp = description
-    @atk = price
+    @img = img
+    @description = description
+    @price = price
   end
 end
