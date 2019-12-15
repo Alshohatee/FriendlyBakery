@@ -19,7 +19,7 @@ get '/cookie' do
   @num = 24
   @id = ENV['API_EDAMAM_ID']
   @key = ENV['API_EDAMAM_KEY']
-  @ingredientLines = []
+
   @arr = []
 
   req = Curl::Easy.perform(@@path + "?q=#{@fo}&app_id=#{@id}&app_key=#{@key}&from=0&to=#{@num}&calories=591-722&health=alcohol-free")
@@ -28,7 +28,7 @@ get '/cookie' do
   i = 0
   while i < @num
     @data = res['hits'][i]["recipe"]
-
+    @ingredientLines = []
     @data["ingredientLines"].each do |y|
       @ingredientLines << y
     end
@@ -45,7 +45,7 @@ get '/muffin' do
   @num = 24
   @id = ENV['API_EDAMAM_ID']
   @key = ENV['API_EDAMAM_KEY']
-  @ingredientLines = []
+
   @arr = []
 
   req = Curl::Easy.perform(@@path + "?q=#{@fo}&app_id=#{@id}&app_key=#{@key}&from=0&to=#{@num}&calories=591-722&health=alcohol-free")
@@ -54,7 +54,7 @@ get '/muffin' do
   i = 0
   while i < @num
     @data = res['hits'][i]["recipe"]
-
+    @ingredientLines = []
     @data["ingredientLines"].each do |y|
       @ingredientLines << y
     end
@@ -71,7 +71,7 @@ get '/cake' do
   @num = 24
   @id = ENV['API_EDAMAM_ID']
   @key = ENV['API_EDAMAM_KEY']
-  @ingredientLines = []
+
   @arr = []
 
   req = Curl::Easy.perform(@@path + "?q=#{fo}&app_id=#{@id}&app_key=#{@key}&from=0&to=#{@num}&calories=591-722&health=alcohol-free")
@@ -80,7 +80,7 @@ get '/cake' do
   i = 0
   while i < @num
     @data = res['hits'][i]["recipe"]
-
+    @ingredientLines = []
     @data["ingredientLines"].each do |y|
       @ingredientLines << y
     end
