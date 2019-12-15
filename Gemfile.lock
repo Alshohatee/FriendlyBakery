@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    curb (0.9.10)
     httparty (0.17.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -23,6 +24,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  curb (~> 0.9.10)!
   httparty (~> 0.17.1)!
   sinatra (~> 2.0, >= 2.0.7)!
 

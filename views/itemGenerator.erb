@@ -1,0 +1,14 @@
+<% if (!(@arr.nil?)) %>
+<div class="grid-container">
+  <% @arr.each do |x| %>
+  <div class="grid-item">
+    <p> <%= x["label"] %> </p>
+    <img src ="<%= x["image"]%>">
+    <% x["ingredientLines"].each do |y| %>
+    <p><%= y %></p>
+    <% end %>
+  </div>
+  <% end %>
+
+</div>
+<% end %>

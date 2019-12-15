@@ -4,7 +4,8 @@ body {
 }
 
 * {
-  font-family: bakery;
+  font-family: sans-serif;
+  /* font-family: bakery; */
 }
 
 /* styling the form */
@@ -17,7 +18,13 @@ h1 {
 #Search-input{
   border-radius: 5px;
   width: 50%;
+
 }
+
+#Search-button:hover {
+  border-style: outset;
+}
+
 #Search-button{
   background-color: #8e7136;
   width: 10%;
@@ -26,14 +33,42 @@ h1 {
   color: white;
   text-align: center;
   font-size: 16px;
-  border: 2px solid #9e5446;
+  /* border: 2px solid #9e5446; */
+  border: 2%;
+  cursor: pointer;
+ border-style: inset;
+
 
 }
 
 
 /* Hher the bakery fonts*/
 @font-face {
-  font-family: bakery;
+  font-family: sans-serif;
   src: url(bakeryFonts/bakery.ttf);
 
+}
+
+/*index */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
+  /* background-color: #2196F3; */
+  padding: 10px;
+
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-style: ridge;
+  border: 1%;
+  font-size: 30px;
+  text-align: center;
+
+}
+.grid-item > *{
+    margin: 0;
+}
+.grid-item:hover {
+  border-style: groove;
 }
