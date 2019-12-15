@@ -2,9 +2,9 @@
 <div class="grid-container">
   <% @arr.each do |x| %>
   <div class="grid-item">
-    <p> <%= x["label"] %> </p>
-    <img src ="<%= x["image"]%>">
-    <% x["ingredientLines"].each do |y| %>
+    <p> <%= x.name %> </p>
+    <img  class="foodIcon"src ="<%= x.img%>">
+    <% x.ingredientLines.each do |y| %>
     <p><%= y %></p>
     <% end %>
   </div>
