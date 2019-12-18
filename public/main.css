@@ -2,7 +2,6 @@
 @font-face {
   font-family: bakery;
   src: url(bakeryFonts/bakery.ttf);
-
 }
 
 @keyframes mymove {
@@ -63,7 +62,6 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-
 }
 
 
@@ -113,28 +111,6 @@ text-align: center;
 color:#eeb111;
 }
 
-#Search-button:hover {
-
-}
-
-#Search-button{
-  background-color: #8e7136;
-  width: 10%;
-  height:30px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 16px;
-  border: 2%;
-  cursor: pointer;
- border-style: inset;
-}
-
-
-img {
-  /* border-radius: 25px;
-  width:90%;
-  height: 25%; */
-}
 /*the dives that hold the info */
 .grid-container {
   background-color: #F58B54;
@@ -174,7 +150,6 @@ img {
   border-style: groove;
 }
 .cake , .muffin , .cookie{
-  /* border: 2px solid; */
   padding: 10px;
   box-shadow: 2px 2px #eeb111;
 }
