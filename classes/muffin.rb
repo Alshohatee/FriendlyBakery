@@ -1,5 +1,4 @@
 class Muffin
-
   attr_reader :id, :name, :img, :ingredientLines, :price, :calories
   def initialize(id, name, img,ingredientLines, calories, price)
     @id = id

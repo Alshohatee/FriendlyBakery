@@ -1,12 +1,10 @@
 require "sinatra"
-# require  "httparty"
 require "curb"
-# require 'sinatra/reloader' if development?
 set :port, 3000
-require './cake.rb'
-require './muffin.rb'
-require './cookie.rb'
-require 'twilio-ruby'
+require './classes/cake.rb'
+require './classes/muffin.rb'
+require './classes/cookie.rb'
+
 
 def h(text)
   Rack::Utils.escape_html(text)
@@ -41,19 +39,16 @@ post '/search' do
   end
   erb :cookie
 end
-# here to go to the specific page
+
 get '/cookie' do
   @fo ="cookie"
   @titlePage = "cookie"
   @num = 24
   @id = ENV['API_EDAMAM_ID']
   @key = ENV['API_EDAMAM_KEY']
-
   @arr = []
-
   req = Curl::Easy.perform(@@path + "?q=#{@fo}&app_id=#{@id}&app_key=#{@key}&from=0&to=#{@num}&calories=591-722&health=alcohol-free")
   res = JSON.parse(req.body)
-
   i = 0
   while i < @num
     @data = res['hits'][i]["recipe"]
@@ -76,12 +71,9 @@ get '/muffin' do
   @num = 24
   @id = ENV['API_EDAMAM_ID']
   @key = ENV['API_EDAMAM_KEY']
-
   @arr = []
-
   req = Curl::Easy.perform(@@path + "?q=#{@fo}&app_id=#{@id}&app_key=#{@key}&from=0&to=#{@num}&calories=591-722&health=alcohol-free")
   res = JSON.parse(req.body)
-
   i = 0
   while i < @num
     @data = res['hits'][i]["recipe"]
@@ -90,7 +82,6 @@ get '/muffin' do
     @data["ingredientLines"].each do |y|
       @ingredientLines << y
     end
-
     @muffin = Muffin.new(i,@data["label"], @data["image"],@ingredientLines,@cal ,rand(1.00 .. 4.00) )
     @arr << @muffin
     i += 1
@@ -104,12 +95,9 @@ get '/cake' do
   @num = 24
   @id = ENV['API_EDAMAM_ID']
   @key = ENV['API_EDAMAM_KEY']
-
   @arr = []
-
   req = Curl::Easy.perform(@@path + "?q=#{fo}&app_id=#{@id}&app_key=#{@key}&from=0&to=#{@num}&calories=591-722&health=alcohol-free")
   res = JSON.parse(req.body)
-
   i = 0
   while i < @num
     @data = res['hits'][i]["recipe"]
@@ -118,26 +106,9 @@ get '/cake' do
     @data["ingredientLines"].each do |y|
       @ingredientLines << y
     end
-
     @cake = Cake.new(i,@data["label"], @data["image"],@ingredientLines, @cal , rand(1.00 .. 4.00) )
     @arr<< @cake
     i += 1
   end
   erb :cake
 end
-
-# #
-# account_sid = ENV['ACCOUNT_SID_TWILIO']
-#
-# auth_token = ENV['AUTH']
-#
-# @client = Twilio::REST::Client.new(account_sid,auth_token)
-#
-# fromNum = ENV['THE_NUMBER_PRO'] # Your Twilio number
-# toNum= ENV['MY_NUMBER'] # Your mobile phone number
-#
-# @client.api.account.messages.create(
-# from: fromNum,
-# to: toNum,
-# body: "Hey hhhhhhhhhhhh!"
-# )

@@ -146,7 +146,7 @@ img {
 
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
-  background-image: url("1.png");
+  background-image: url("images/1.png");
   border-style: ridge;
   border: 1%;
   border-radius: 25px;
