@@ -1,14 +1,24 @@
 <% if (!(@arr.nil?)) %>
 <div class="grid-container">
+  <%@i = 0 %>
   <% @arr.each do |x| %>
-  <div class="grid-item">
-    <p> <%= x.name %> </p>
+  <div class="<%=@titlePage%> grid-item">
+    <%@i+=1%>
+    <h4> <%= x.name %> </h4>
     <img  class="foodIcon"src ="<%= x.img%>">
-    <% x.ingredientLines.each do |y| %>
-    <p><%= y %></p>
-    <% end %>
+    <p>  <%= "Price:$  %0.2f" % [x.price] %> </p>
+    <p> <%=  "Calories: %0.2f" % [ x.calories] %> </p>
   </div>
   <% end %>
-
 </div>
 <% end %>
+
+<!--
+<script type="text/javascript">
+
+  document.getElementById("<%=@titlePage+(@i).to_s %>").addEventListener('click', (e) => {
+
+    console.log(e.target.id);
+
+  })
+</script> -->

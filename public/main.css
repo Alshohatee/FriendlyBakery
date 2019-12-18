@@ -1,28 +1,120 @@
-body {
-  background-color: #fcf1e1;
-  margin:0;
+/* Hher the bakery fonts*/
+@font-face {
+  font-family: bakery;
+  src: url(bakeryFonts/bakery.ttf);
+
+}
+
+@keyframes mymove {
+  0% {opacity: 0.01;}
+  25% {opacity: 0.05;}
+  100% {opacity: 0.09;}
 }
 
 * {
-  font-family: sans-serif;
-  /* font-family: bakery; */
+  animation: mymove  .50s;
 }
 
-/* styling the form */
+ #index{
+  background-image: url("https://images.unsplash.com/photo-1566897819059-db42e135fa69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  margin:0;
+
+}
+#cake , #cookie , #muffin, #search{
+  background-color: #800000 ;
+  margin:0;
+}
+
 form > * {
   text-align: center;
 }
+
 h1 {
+  font-family: bakery;
+  font-size: 40px;
   text-align: center;
+  color: #eeb111;
+
 }
+
 #Search-input{
   border-radius: 5px;
   width: 50%;
+}
+
+.divTitle{
+font-family: 'Merienda', cursive;
+font-size: 30px;
+height: auto;
+}
+
+.divTitle> h1{
+  margin: 0;
+  float: center;
+}
+
+
+#logoIMG{
+  width: 10%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 
 }
 
-#Search-button:hover {
+
+#rightButton1,#rightButton2{
+  float: right;
+}
+
+#leftButton1,#leftButton2{
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #eeb111;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:{
+  background-color: #111;
   border-style: outset;
+}
+
+li a:active{
+  background-color: #222;
+}
+
+#TitleGrid{
+  display: grid;
+  grid-template: auto / repeat(3, 33% );
+  width: 100%;
+}
+
+#TitleGrid img{
+  width: 20%;
+
+}
+
+#logoIMG1{
+margin-left: 83%;s
+}
+
+
+h2{
+text-align: center;
+color:#eeb111;
+}
+
+#Search-button:hover {
+
 }
 
 #Search-button{
@@ -30,46 +122,68 @@ h1 {
   width: 10%;
   height:30px;
   border-radius: 5px;
-  color: white;
   text-align: center;
   font-size: 16px;
-  /* border: 2px solid #9e5446; */
   border: 2%;
   cursor: pointer;
  border-style: inset;
-
-
 }
 
 
-/* Hher the bakery fonts*/
-@font-face {
-  font-family: sans-serif;
-  src: url(bakeryFonts/bakery.ttf);
-
+img {
+  /* border-radius: 25px;
+  width:90%;
+  height: 25%; */
 }
-
 /*the dives that hold the info */
 .grid-container {
+  background-color: #F58B54;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 5px;
-  /* background-color: #2196F3; */
   padding: 10px;
-
 }
+
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
+  background-image: url("1.png");
   border-style: ridge;
   border: 1%;
   border-radius: 25px;
   font-size: 30px;
   text-align: center;
+  opacity: 0.8;
 
 }
-.grid-item > *{
-    margin: 0;
+
+.homePageImg  {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
 }
+.grid-item:hover{
+  opacity: .9;
+  filter: alpha(opacity=.9);
+}
+
+.grid-item > *{
+    /* margin: 0; */
+}
+
 .grid-item:hover {
   border-style: groove;
+}
+.cake , .muffin , .cookie{
+  /* border: 2px solid; */
+  padding: 10px;
+  box-shadow: 2px 2px #eeb111;
+}
+.cake{
+  cursor: url(http://cur.cursors-4u.net/food/foo-1/foo97.cur), auto !important;
+}
+.muffin{
+cursor: url(http://cur.cursors-4u.net/food/foo-2/foo190.cur), default !important;
+}
+.cookie{
+  cursor: url(http://cur.cursors-4u.net/food/foo-6/foo523.cur), auto !important;
 }
